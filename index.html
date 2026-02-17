@@ -770,6 +770,7 @@
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
+            window.scrollTo({ top: 61, behavior: 'smooth' });
         }
 
         function renderQuickNav() {
