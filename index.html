@@ -687,12 +687,12 @@
         ];
 
         const scoreMatrixB = [
-            [0,0,0,0,1], [0,1,0,0,0], [0,0,0,0,1], [0,0,0,0,1], [0,0,0,1,0],
+            [0,1,0,0,0], [0,1,0,0,0], [0,0,0,0,1], [0,0,0,0,1], [0,0,0,1,0],
             [1,0,0,0,0], [0,0,1,0,0], [0,1,0,0,0], [1,0,0,0,0], [0,0,1,0,0],
             [0,0,0,0,1], [0,0,1,0,0], [1,0,0,0,0], [1,0,0,0,0], [0,0,0,1,0],
-            [1,0,0,0,0], [0,0,0,1,0], [0,0,1,0,0], [0,0,0,1,0], [0,0,1,0,0],
-            [0,1,0,0,0], [1,0,0,0,0], [0,0,0,1,0], [0,0,1,0,0], [0,0,0,0,1],
-            [0,1,0,0,0], [0,0,0,0,1], [0,1,0,0,0], [0,0,0,1,0], [0,1,0,0,0]
+            [1,0,0,0,0], [0,0,0,1,0], [0,0,1,0,0], [0,0,0,1,0], [1,0,0,0,0],
+            [0,1,0,0,0], [1,0,0,0,0], [0,0,0,1,0], [1,0,0,0,0], [0,0,0,0,1],
+            [0,1,0,0,0], [0,0,0,0,1], [0,1,0,0,0], [0,1,0,0,0], [0,1,0,0,0]
         ];
 
         const styles = {
@@ -709,9 +709,11 @@
         function startQuiz() {
             document.getElementById('welcomeScreen').classList.remove('active');
             document.getElementById('quizScreen').classList.add('active');
-            window.scrollTo(60, 958);
             renderQuestion();
             renderQuickNav();
+            setTimeout(() => {
+                window.scrollTo({ top: 61, behavior: 'smooth' });
+            }, 100);
         }
 
         function renderQuestion() {
@@ -770,7 +772,9 @@
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
-            window.scrollTo(61, 0);
+            setTimeout(() => {
+                window.scrollTo({ top: 61, behavior: 'smooth' });
+            }, 100);
         }
 
         function renderQuickNav() {
@@ -816,6 +820,10 @@
 
             document.getElementById('quizScreen').classList.remove('active');
             document.getElementById('resultsScreen').classList.add('active');
+            
+            setTimeout(() => {
+                window.scrollTo({ top: 61, behavior: 'smooth' });
+            }, 100);
 
             const scores = calculateResults();
             const total = scores.reduce((a, b) => a + b, 0);
@@ -904,7 +912,9 @@
             answers = {};
             document.getElementById('resultsScreen').classList.remove('active');
             document.getElementById('welcomeScreen').classList.add('active');
-            window.scrollTo(61, 0);
+            setTimeout(() => {
+                window.scrollTo({ top: 61, behavior: 'smooth' });
+            }, 100);
         }
     </script>
 </body>
