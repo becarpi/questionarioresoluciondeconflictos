@@ -753,6 +753,9 @@
                 currentQuestion++;
             }
             renderQuestion();
+            setTimeout(() => {
+                window.scrollTo({ top: 61, behavior: 'smooth' });
+            }, 100);
         }
 
         function prevQuestion() {
