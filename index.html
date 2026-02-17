@@ -753,12 +753,19 @@
                 currentQuestion++;
             }
             renderQuestion();
+            // Evitar scroll automático del navegador
+            requestAnimationFrame(() => {
+                window.scrollTo({ top: 61, behavior: 'smooth' });
+            });
         }
 
         function prevQuestion() {
             if (currentQuestion > 0) {
                 currentQuestion--;
                 renderQuestion();
+                requestAnimationFrame(() => {
+                    window.scrollTo({ top: 61, behavior: 'smooth' });
+                });
             }
         }
 
@@ -766,15 +773,19 @@
             if (currentQuestion < 29) {
                 currentQuestion++;
                 renderQuestion();
+                requestAnimationFrame(() => {
+                    window.scrollTo({ top: 61, behavior: 'smooth' });
+                });
             }
         }
 
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
-            setTimeout(() => {
+            // Evitar scroll automático del navegador
+            requestAnimationFrame(() => {
                 window.scrollTo({ top: 61, behavior: 'smooth' });
-            }, 100);
+            });
         }
 
         function renderQuickNav() {
@@ -785,7 +796,9 @@
                 const btn = document.createElement('button');
                 btn.className = 'quick-nav-btn';
                 btn.textContent = i + 1;
-                btn.onclick = () => goToQuestion(i);
+                btn.onclick = () => {
+                    goToQuestion(i);
+                };
                 
                 if (i === currentQuestion) {
                     btn.classList.add('current');
