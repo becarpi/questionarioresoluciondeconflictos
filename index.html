@@ -711,8 +711,7 @@
             document.getElementById('quizScreen').classList.add('active');
             renderQuestion();
             renderQuickNav();
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            window.scrollTo(0, scrollHeight * 0.61);
+            window.scrollTo(61);
         }
 
         function renderQuestion() {
@@ -752,16 +751,14 @@
                 currentQuestion++;
             }
             renderQuestion();
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            window.scrollTo(0, scrollHeight * 0.61);
+            window.scrollTo(61);
         }
 
         function prevQuestion() {
             if (currentQuestion > 0) {
                 currentQuestion--;
                 renderQuestion();
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                window.scrollTo(0, scrollHeight * 0.61);
+                window.scrollTo(61);
             }
         }
 
@@ -769,16 +766,14 @@
             if (currentQuestion < 29) {
                 currentQuestion++;
                 renderQuestion();
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                window.scrollTo(0, scrollHeight * 0.61);
+                window.scrollTo(61);
             }
         }
 
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            window.scrollTo(0, scrollHeight * 0.61);
+            window.scrollTo(61);
         }
 
         function renderQuickNav() {
@@ -826,8 +821,7 @@
 
             document.getElementById('quizScreen').classList.remove('active');
             document.getElementById('resultsScreen').classList.add('active');
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            window.scrollTo(0, scrollHeight * 0.61);
+            window.scrollTo(61);
 
             const scores = calculateResults();
             const total = scores.reduce((a, b) => a + b, 0);
