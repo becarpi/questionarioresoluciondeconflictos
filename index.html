@@ -711,9 +711,8 @@
             document.getElementById('quizScreen').classList.add('active');
             renderQuestion();
             renderQuickNav();
-            setTimeout(() => {
-                window.scrollTo({ top: 61, behavior: 'smooth' });
-            }, 100);
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo(0, scrollHeight * 0.61);
         }
 
         function renderQuestion() {
@@ -753,19 +752,16 @@
                 currentQuestion++;
             }
             renderQuestion();
-            // Evitar scroll automático del navegador
-            requestAnimationFrame(() => {
-                window.scrollTo({ top: 61, behavior: 'smooth' });
-            });
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo(0, scrollHeight * 0.61);
         }
 
         function prevQuestion() {
             if (currentQuestion > 0) {
                 currentQuestion--;
                 renderQuestion();
-                requestAnimationFrame(() => {
-                    window.scrollTo({ top: 61, behavior: 'smooth' });
-                });
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                window.scrollTo(0, scrollHeight * 0.61);
             }
         }
 
@@ -773,19 +769,16 @@
             if (currentQuestion < 29) {
                 currentQuestion++;
                 renderQuestion();
-                requestAnimationFrame(() => {
-                    window.scrollTo({ top: 61, behavior: 'smooth' });
-                });
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                window.scrollTo(0, scrollHeight * 0.61);
             }
         }
 
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
-            // Evitar scroll automático del navegador
-            requestAnimationFrame(() => {
-                window.scrollTo({ top: 61, behavior: 'smooth' });
-            });
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo(0, scrollHeight * 0.61);
         }
 
         function renderQuickNav() {
@@ -833,10 +826,8 @@
 
             document.getElementById('quizScreen').classList.remove('active');
             document.getElementById('resultsScreen').classList.add('active');
-            
-            setTimeout(() => {
-                window.scrollTo({ top: 61, behavior: 'smooth' });
-            }, 100);
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo(0, scrollHeight * 0.61);
 
             const scores = calculateResults();
             const total = scores.reduce((a, b) => a + b, 0);
@@ -925,9 +916,8 @@
             answers = {};
             document.getElementById('resultsScreen').classList.remove('active');
             document.getElementById('welcomeScreen').classList.add('active');
-            setTimeout(() => {
-                window.scrollTo({ top: 61, behavior: 'smooth' });
-            }, 100);
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo(0, scrollHeight * 0.61);
         }
     </script>
 </body>
