@@ -770,7 +770,7 @@
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
-            window.scrollTo({ top: 61, behavior: 'smooth' });
+            window.scrollTo({61, behavior: 'smooth' });
         }
 
         function renderQuickNav() {
@@ -816,7 +816,6 @@
 
             document.getElementById('quizScreen').classList.remove('active');
             document.getElementById('resultsScreen').classList.add('active');
-            window.scrollTo(65, 0);
 
             const scores = calculateResults();
             const total = scores.reduce((a, b) => a + b, 0);
@@ -905,7 +904,7 @@
             answers = {};
             document.getElementById('resultsScreen').classList.remove('active');
             document.getElementById('welcomeScreen').classList.add('active');
-            window.scrollTo(30, 0);
+            window.scrollTo(61, 0);
         }
     </script>
 </body>
