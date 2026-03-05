@@ -328,88 +328,6 @@
             margin-bottom: 50px;
         }
 
-        .matrix-container {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 107, 26, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 50px;
-        }
-
-        .matrix-title {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #FF8C42;
-        }
-
-        .matrix-grid {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .matrix-label-y {
-            position: absolute;
-            left: -60px;
-            top: 50%;
-            transform: translateY(-50%) rotate(-90deg);
-            font-size: 12px;
-            color: #999;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .matrix-label-x {
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .matrix-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4px;
-            margin-bottom: 4px;
-        }
-
-        .matrix-cell {
-            aspect-ratio: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .matrix-center {
-            grid-column: 1 / -1;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        .matrix-cell-name {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .matrix-cell-score {
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        .matrix-cell-percent {
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .top-styles {
-            margin-bottom: 40px;
-        }
-
         .top-styles-title {
             text-align: center;
             font-size: 28px;
@@ -418,80 +336,56 @@
 
         .top-styles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            margin-bottom: 40px;
         }
 
         .top-style-card {
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
             border: 2px solid;
-        }
-
-        .top-style-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .top-style-title {
-            font-size: 24px;
+        .top-style-rank {
+            font-size: 13px;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .top-style-name {
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .top-style-score-block {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
         }
 
         .top-style-score {
-            font-size: 36px;
+            font-size: 52px;
             font-weight: bold;
+            line-height: 1;
+        }
+
+        .top-style-percent {
+            font-size: 20px;
+            opacity: 0.75;
         }
 
         .top-style-desc {
             font-size: 14px;
             line-height: 1.6;
-        }
-
-        .distribution {
-            margin-bottom: 40px;
-        }
-
-        .distribution-title {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .distribution-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .distribution-label {
-            width: 130px;
-            text-align: right;
-            font-weight: bold;
-            color: #ccc;
-        }
-
-        .distribution-bar-container {
-            flex: 1;
-            height: 40px;
-            background: #222;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .distribution-bar {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 15px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: width 0.5s;
+            opacity: 0.85;
+            margin-top: 4px;
         }
 
         .restart-container {
@@ -501,19 +395,32 @@
 
         @media (max-width: 768px) {
             .welcome-card {
-                padding: 40px 20px;
+                padding: 30px 16px;
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             .logo-text {
-                font-size: 36px;
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 15px;
             }
 
             .question-title {
-                font-size: 22px;
+                font-size: 20px;
+            }
+
+            .question-card {
+                padding: 24px 16px;
+            }
+
+            .option {
+                padding: 16px;
+                gap: 12px;
             }
 
             .navigation {
@@ -521,17 +428,35 @@
             }
 
             .quick-nav-grid {
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(6, 1fr);
             }
 
-            .distribution-item {
-                flex-direction: column;
-                align-items: stretch;
+            .results-screen {
+                padding: 20px 12px;
             }
 
-            .distribution-label {
-                text-align: left;
-                width: 100%;
+            .results-card {
+                padding: 24px 16px;
+            }
+
+            .results-header {
+                margin-bottom: 30px;
+            }
+
+            .top-styles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top-style-score {
+                font-size: 40px;
+            }
+
+            .top-style-name {
+                font-size: 22px;
+            }
+
+            .top-styles-title {
+                font-size: 22px;
             }
         }
     </style>
@@ -614,23 +539,8 @@
                     <p class="subtitle">Tu perfil de resolución de conflictos</p>
                 </div>
 
-                <div class="matrix-container">
-                    <h2 class="matrix-title">Matriz de Resolución de Conflictos</h2>
-                    <div class="matrix-grid">
-                        <div class="matrix-label-y">Interés UNO</div>
-                        <div class="matrix-label-x">Interés propio (YO)</div>
-                        <div id="matrixContent"></div>
-                    </div>
-                </div>
-
-                <div class="top-styles">
-                    <h2 class="top-styles-title">Tus Estilos Predominantes</h2>
-                    <div class="top-styles-grid" id="topStylesGrid"></div>
-                </div>
-
-                <div class="distribution">
-                    <h2 class="distribution-title">Distribución Completa</h2>
-                    <div id="distributionContent"></div>
+                <h2 class="top-styles-title">Tus Estilos Predominantes</h2>
+                <div class="top-styles-grid" id="topStylesGrid"></div>
                 </div>
 
                 <div class="restart-container">
@@ -711,7 +621,7 @@
             document.getElementById('quizScreen').classList.add('active');
             renderQuestion();
             renderQuickNav();
-            window.scrollTo(61);
+            document.getElementById('quizScreen').scrollIntoView({ behavior: 'smooth' });
         }
 
         function renderQuestion() {
@@ -751,14 +661,14 @@
                 currentQuestion++;
             }
             renderQuestion();
-            window.scrollTo(61);
+            document.querySelector('.question-card').scrollIntoView({ behavior: 'smooth' });
         }
 
         function prevQuestion() {
             if (currentQuestion > 0) {
                 currentQuestion--;
                 renderQuestion();
-                window.scrollTo(61);
+                document.querySelector('.question-card').scrollIntoView({ behavior: 'smooth' });
             }
         }
 
@@ -766,14 +676,14 @@
             if (currentQuestion < 29) {
                 currentQuestion++;
                 renderQuestion();
-                window.scrollTo(61);
+                document.querySelector('.question-card').scrollIntoView({ behavior: 'smooth' });
             }
         }
 
         function goToQuestion(index) {
             currentQuestion = index;
             renderQuestion();
-            window.scrollTo(61);
+            document.querySelector('.question-card').scrollIntoView({ behavior: 'smooth' });
         }
 
         function renderQuickNav() {
@@ -821,88 +731,31 @@
 
             document.getElementById('quizScreen').classList.remove('active');
             document.getElementById('resultsScreen').classList.add('active');
-            window.scrollTo(61);
+            document.getElementById('resultsScreen').scrollIntoView({ behavior: 'smooth' });
 
             const scores = calculateResults();
             const total = scores.reduce((a, b) => a + b, 0);
             const percentages = scores.map(s => ((s / total) * 100).toFixed(1));
 
-            // Renderizar matriz
-            const matrixContent = document.getElementById('matrixContent');
-            matrixContent.innerHTML = `
-                <div class="matrix-row">
-                    <div class="matrix-cell" style="background-color: ${styles.e5.color}; color: ${styles.e5.textColor}; border-top-left-radius: 12px;">
-                        <div class="matrix-cell-name">${styles.e5.name}</div>
-                        <div class="matrix-cell-score">${scores[4]}</div>
-                        <div class="matrix-cell-percent">${percentages[4]}%</div>
-                    </div>
-                    <div class="matrix-cell" style="background-color: ${styles.e2.color}; color: ${styles.e2.textColor}; border-top-right-radius: 12px;">
-                        <div class="matrix-cell-name">${styles.e2.name}</div>
-                        <div class="matrix-cell-score">${scores[1]}</div>
-                        <div class="matrix-cell-percent">${percentages[1]}%</div>
-                    </div>
-                </div>
-                <div class="matrix-cell matrix-center" style="background-color: ${styles.e3.color}; color: ${styles.e3.textColor};">
-                    <div class="matrix-cell-name">${styles.e3.name}</div>
-                    <div class="matrix-cell-score">${scores[2]}</div>
-                    <div class="matrix-cell-percent">${percentages[2]}%</div>
-                </div>
-                <div class="matrix-row">
-                    <div class="matrix-cell" style="background-color: ${styles.e4.color}; color: ${styles.e4.textColor}; border-bottom-left-radius: 12px;">
-                        <div class="matrix-cell-name">${styles.e4.name}</div>
-                        <div class="matrix-cell-score">${scores[3]}</div>
-                        <div class="matrix-cell-percent">${percentages[3]}%</div>
-                    </div>
-                    <div class="matrix-cell" style="background-color: ${styles.e1.color}; color: ${styles.e1.textColor}; border-bottom-right-radius: 12px;">
-                        <div class="matrix-cell-name">${styles.e1.name}</div>
-                        <div class="matrix-cell-score">${scores[0]}</div>
-                        <div class="matrix-cell-percent">${percentages[0]}%</div>
-                    </div>
-                </div>
-            `;
-
-            // Top 2 estilos
             const sorted = scores.map((score, index) => ({ score, index }))
                 .sort((a, b) => b.score - a.score);
-            
+
             const topStylesGrid = document.getElementById('topStylesGrid');
             topStylesGrid.innerHTML = sorted.slice(0, 2).map((item, idx) => {
                 const styleKey = `e${item.index + 1}`;
                 const style = styles[styleKey];
                 return `
                     <div class="top-style-card" style="background-color: ${style.color}; border-color: ${idx === 0 ? '#FF6B1A' : '#FFB380'}; color: ${style.textColor};">
-                        <div class="top-style-header">
-                            <div class="top-style-title">${idx === 0 ? '1º' : '2º'} ${style.name}</div>
+                        <div class="top-style-rank">${idx === 0 ? 'Estilo principal' : 'Estilo secundario'}</div>
+                        <div class="top-style-name">${style.name}</div>
+                        <div class="top-style-score-block">
                             <div class="top-style-score">${item.score}</div>
+                            <div class="top-style-percent">${percentages[item.index]}%</div>
                         </div>
                         <div class="top-style-desc">${style.desc}</div>
                     </div>
                 `;
             }).join('');
-
-            // Distribución
-            const distributionContent = document.getElementById('distributionContent');
-            distributionContent.innerHTML = scores.map((score, index) => {
-                const styleKey = `e${index + 1}`;
-                const style = styles[styleKey];
-                return `
-                    <div class="distribution-item">
-                        <div class="distribution-label">${style.name}</div>
-                        <div class="distribution-bar-container">
-                            <div class="distribution-bar" style="width: ${percentages[index]}%; background-color: ${style.color}; color: ${style.textColor}; min-width: ${score > 0 ? '60px' : '0'};">
-                                ${score > 0 ? `${score} (${percentages[index]}%)` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            // Animar las barras
-            setTimeout(() => {
-                document.querySelectorAll('.distribution-bar').forEach(bar => {
-                    bar.style.width = bar.style.width;
-                });
-            }, 100);
         }
 
         function restart() {
@@ -910,8 +763,7 @@
             answers = {};
             document.getElementById('resultsScreen').classList.remove('active');
             document.getElementById('welcomeScreen').classList.add('active');
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            window.scrollTo(0, scrollHeight * 0.61);
+            document.getElementById('welcomeScreen').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
